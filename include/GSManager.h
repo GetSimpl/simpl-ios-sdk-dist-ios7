@@ -49,7 +49,7 @@
 ///
 /// \param completion Completion block for the response with following arguments in
 /// order :<ul><li>NSDictionary jsonResponse : URL response in json format</li><li>NSError error : Error if any</li></ul>
-- (void)authorizeTransaction:(GSTransaction * __nonnull)transaction onCompletion:(void (^ __nonnull)(NSDictionary * __nullable, NSError * __nullable))completion;
+- (void)authorizeTransaction:(GSTransaction * __nonnull)transaction onCompletion:(void (^ __nonnull)(NSDictionary * __nullable jsonResponse, NSError * __nullable error))completion;
 
 
 @end
