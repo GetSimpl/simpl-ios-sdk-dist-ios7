@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license = {:type => 'Commercial' , :file => 'License'}
   s.platform = :ios, '7.0'
   s.author       = { "Alok Jha" => "alok@getsimpl.com" }
-  s.resource = "Resources/GetSimplResources.bundle"
+  s.resource = "GetSimplResources.bundle"
   s.public_header_files = "Headers/Public/*.h"
-  s.ios.vendored_library = "Libraries/libGetSimpl.a"
+  s.ios.vendored_library = "libGetSimpl.a"
 end
