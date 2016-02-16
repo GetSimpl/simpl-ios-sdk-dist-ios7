@@ -8,6 +8,7 @@ Pod::Spec.new do |s|
   s.platform = :ios, '7.0'
   s.author       = { "Alok Jha" => "alok@getsimpl.com" }
   s.ios.resource = "GetSimplResources.bundle"
+  s.source_files = "include/*.h"
   s.public_header_files = "include/*.h"
   s.preserve_paths = "libGetSimpl.a"
   s.ios.vendored_library = "libGetSimpl.a"
