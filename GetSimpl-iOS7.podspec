@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
   s.version      = "1.2.1"
   s.summary      = "GetSimpl iOS SDK Static Library"
   s.homepage     = "https://github.com/GetSimpl/simpl-ios-sdk-dist-ios7"
-  s.source = {:http => 'https://github.com/GetSimpl/simpl-ios-sdk-dist-ios7.git',:tag => s.version.to_s}
+  s.source = {:git => 'https://github.com/GetSimpl/simpl-ios-sdk-dist-ios7.git',:tag => s.version.to_s}
   s.license = {:type => 'Commercial' , :file => 'License'}
   s.platform = :ios, '7.0'
   s.author       = { "Alok Jha" => "alok@getsimpl.com" }
