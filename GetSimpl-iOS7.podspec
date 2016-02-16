@@ -3,11 +3,13 @@ Pod::Spec.new do |s|
   s.version      = "1.2.1"
   s.summary      = "GetSimpl iOS SDK Static Library"
   s.homepage     = "https://github.com/GetSimpl/simpl-ios-sdk-dist-ios7"
-  s.source = {:http => 'https://github.com/GetSimpl/simpl-ios-sdk-dist-ios7/releases/download/v1.2.1/libGetSimpl.a.zip'}
+  s.source = {:http => 'https://github.com/GetSimpl/simpl-ios-sdk-dist-ios7.git',:tag => s.version.to_s}
   s.license = {:type => 'Commercial' , :file => 'License'}
   s.platform = :ios, '7.0'
   s.author       = { "Alok Jha" => "alok@getsimpl.com" }
-  s.resource = "GetSimplResources.bundle"
-  s.public_header_files = "Headers/Public/*.h"
+  s.ios.resource = "GetSimplResources.bundle"
+  s.public_header_files = "include/*.h"
+  s.preserve_paths = "libGetSimpl.a"
   s.ios.vendored_library = "libGetSimpl.a"
+  s.requires_arc = true
 end
