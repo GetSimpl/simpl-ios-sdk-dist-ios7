@@ -1,11 +1,9 @@
 # simpl-ios-sdk-dist-ios7
 
+[![Version](https://img.shields.io/cocoapods/v/GetSimpl-iOS7.svg)](http://cocoapods.org/pods/GetSimpl-iOS7)
 [![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)]()
 
 ## How to install
-### Manually :
-Go to Repository release section and download the GetSimpl.framework.zip file from the latest release and unarchive it to get the latest framework file.
-
 
 ### CocoaPods :
 [CocoaPods](https://cocoapods.org/) is a dependency manager for Cocoa projects. You can install it with the following command:
@@ -15,7 +13,7 @@ $ gem install cocoapods
 To integrate GetSimpl into your Xcode project using CocoaPods, specify it in your Podfile:
 ````
 use_frameworks!
-pod 'GetSimpl'
+pod 'GetSimpl-iOS7'
 ````
 Then, run the following command:
 ````
@@ -23,8 +21,7 @@ $ pod install
 ````
 
 ## iOS Integration
-* Once you have received the SDK, add the GetSimpl framework into your Xcode Project. Make sure to checkmark "Copy items if needed" when Xcode shows the options for adding files.
-* Target -> General -> Embedded Frameworks -> Click on "+" icon to add GetSimpl framework.
+* Target -> Build Settings -> ENABLE_BITCODE -> Mark it as NO.
 * Add the following to your Info.plist file:
 ````
     <key>CFBundleURLTypes</key>
@@ -71,7 +68,7 @@ $ pod install
 
 * Import the Library :
 ````
-#import "GetSimpl/GetSimpl.h"
+#import "GetSimpl-iOS7/GetSimpl.h"
 ````
 
 * Initialise the SDK with your merchantID, typically in your applications didFinishLaunchingOptions method:
