@@ -12,7 +12,6 @@ $ gem install cocoapods
 ````
 To integrate GetSimpl into your Xcode project using CocoaPods, specify it in your Podfile:
 ````
-use_frameworks!
 pod 'GetSimpl-iOS7'
 ````
 Then, run the following command:
