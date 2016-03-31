@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "GetSimpl-iOS7"
-  s.version      = "1.2.9"
+  s.version      = "1.3.0"
   s.summary      = "GetSimpl iOS SDK Static Library"
   s.homepage     = "https://github.com/GetSimpl/simpl-ios-sdk-dist-ios7"
   s.source = {:git => 'https://github.com/GetSimpl/simpl-ios-sdk-dist-ios7.git',:tag => "v#{s.version}"}
