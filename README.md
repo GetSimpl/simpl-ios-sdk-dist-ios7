@@ -87,51 +87,17 @@ GSUser *user = [[GSUser alloc] initWithPhoneNumber:@"user mobile number" email:@
  
 If the user is approved and merchant should show Simpl button and if the user is not an approved user,do not show the   Simpl button.
 
-* Realtime approval :
-For some merchants who prefer to not share data upfront but willing to approve users in realtime by sharing data before transaction may use the approval call like below :
-````
-GSUser *user = [[GSUser alloc] initWithHashedPhoneNumber:@"hashed value of user phone number"];
-user.extraParams = @{@"wallet_balance_in_paise" : @30000,@"transaction_amount_in_paise" : @20000};
-[[GSManager sharedManager] checkApprovalForUser:user onCompletion:^(BOOL approved, BOOL isFirstTransactionOfUser,  NSString *buttonText ,NSError *error) {
- }]
-````
-
-```` 
-extraParams ->  Extra properties of GSUser to be set as Key-Value pairs.Example of some keys are transaction_amount_in_paise, wallet_balance_in_paise,failed_transaction_bank_name,user_location,theatre_location,member_since, signed_in , etc.
-This property has been provided so that merchants can provide additional parameters for real-time approval without upgrading the SDK.
-````
-If merchant is using hashedPhoneNumber to check for pre-approval then the above keys will be used for realtime approval of users provided merchant has realtime configuration enabled on server side. 
-
-* For Simpl button , merchants can use GSButton class given by SDK which can be customized through following properties:
-````
-
-/// Button background color. Defaults to Simpl branding color
-@property (nonatomic, strong) UIColor *buttonColor;
-
-/// Button border color. Defaults to Black Color with 10% alpha
-@property (nonatomic, strong) UIColor *buttonBorderColor;
-
-/// Title text of button. Defaults to "Buy Now, Pay Later"
-@property (nonatomic, copy) NSString *titleText;
-
-/// Title Color of Button. Defaults to White color
-@property (nonatomic, strong) UIColor *titleColor;
-
-/// Font of button
-@property (nonatomic, strong) UIFont *titleFont;
-
-/// Text color of "Powered by Simpl" text. Defaults to R94 G107 B125 A1
-@property (nonatomic, strong) UIColor *poweredByTextColor;
-
-/// Separator line color. Defaults to Black Color with 8% alpha
-@property (nonatomic, strong) UIColor *separatorColor;
-
-````
+* For Simpl button , merchants can use GSButton class given by SDK or they can use their own custom button. However they should use ```` buttonText ```` value from approval call above to display the text on the button.
 
 * On clicking Simpl button, call the following method to start the transaction. This will open an OTP view for the user to enter . In the completion block transaction_token will be returned.
 ````
    GSUser *user = [[GSUser alloc] initWithPhoneNumber:@"user mobile number" email:@"user email"];
    GSTransaction *transaction = [[GSTransaction alloc] initWithUser:user amountInPaise:500];
+    or
+   GSTransaction *transaction = [[GSTransaction alloc] initWithUser:user withOrderId:"OrderId" amountInPaise:500];
+   
+   // OrderId refers to the merchant generated order id of the transaction in progress
+   
 [ [GSManager sharedManager]  authorizeTransaction:transaction onCompletion:^(NSDictionary * jsonResponse, NSError *  error) {
   }];
 ````
