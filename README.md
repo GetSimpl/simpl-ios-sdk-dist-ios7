@@ -11,9 +11,16 @@
 $ gem install cocoapods
 ````
 To integrate GetSimpl into your Xcode project using CocoaPods, specify it in your Podfile:
+
 ````
-pod 'GetSimpl-iOS7'
+pod 'GetSimpl-iOS'
 ````
+If your app supports iOS 7 too then add following to your Podfile:
+
+````
+pod 'GetSimpl-iOS7', '~> 1.3.1'
+````
+
 Then, run the following command:
 ````
 $ pod install
@@ -34,7 +41,7 @@ $ pod install
      </dict>
     </array>
 ````
-* For iOS 9 also add the following to your Info.plist file :
+* For iOS 9+ also add the following to your Info.plist file :
 ````
     <key>NSAppTransportSecurity</key>
     <dict>
@@ -67,7 +74,12 @@ $ pod install
 
 * Import the Library :
 ````
-#import "GetSimpl-iOS7/GetSimpl.h"
+#import "GetSimpl-iOS/GetSimpl.h" 
+````
+or if your app supports iOS 7 then 
+
+````
+#import "GetSimpl-iOS7/GetSimpl.h" 
 ````
 
 * Initialise the SDK with your merchantID, typically in your applications didFinishLaunchingOptions method:
