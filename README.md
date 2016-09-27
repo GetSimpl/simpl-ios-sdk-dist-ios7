@@ -1,6 +1,6 @@
 # simpl-ios-sdk-dist-ios7
 
-[![Version](https://img.shields.io/cocoapods/v/GetSimpl-iOS7.svg)](http://cocoapods.org/pods/GetSimpl-iOS7)
+[![Version](https://img.shields.io/cocoapods/v/GetSimpl-iOS.svg)](http://cocoapods.org/pods/GetSimpl-iOS)
 [![Platform](https://img.shields.io/badge/platform-iOS-lightgrey.svg)]()
 
 ## How to install
