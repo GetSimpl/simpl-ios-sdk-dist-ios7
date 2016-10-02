@@ -10,5 +10,4 @@
 #import "GSUser.h"
 #import "GSTransaction.h"
 #import "GSCallBackHandler.h"
-#import "GSButton.h"
 
