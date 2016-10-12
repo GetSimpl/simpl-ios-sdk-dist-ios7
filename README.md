@@ -99,7 +99,7 @@ GSUser *user = [[GSUser alloc] initWithPhoneNumber:@"user mobile number" email:@
  
 If the user is approved and merchant should show Simpl button and if the user is not an approved user,do not show the   Simpl button.
 
-* For Simpl button , merchants can use GSButton class given by SDK or they can use their own custom button. However they should use ```` buttonText ```` value from approval call above to display the text on the button.
+* To show Simpl option, merchants can use their own custom button. However they should use ```` buttonText ```` value from approval call above to display the text on the button.
 
 * On clicking Simpl button, call the following method to start the transaction. This will open an OTP view for the user to enter . In the completion block transaction_token will be returned.
 ````
