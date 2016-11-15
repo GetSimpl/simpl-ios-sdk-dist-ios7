@@ -15,11 +15,6 @@ To integrate GetSimpl into your Xcode project using CocoaPods, specify it in you
 ````
 pod 'GetSimpl-iOS'
 ````
-If your app supports iOS 7 too then add following to your Podfile:
-
-````
-pod 'GetSimpl-iOS7', '~> 1.3.1'
-````
 
 Then, run the following command:
 ````
@@ -76,12 +71,6 @@ $ pod install
 ````
 #import "GetSimpl-iOS/GetSimpl.h" 
 ````
-or if your app supports iOS 7 then 
-
-````
-#import "GetSimpl-iOS7/GetSimpl.h" 
-````
-
 * Initialise the SDK with your merchantID, typically in your applications didFinishLaunchingOptions method:
 ````
 [GSManager initializeWithMerchantID@:@"Your merchant id"];
