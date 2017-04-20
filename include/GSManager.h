@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "GSTransaction.h"
-
+#import "GSUser.h"
 
 @interface GSManager : NSObject
 
@@ -62,39 +61,6 @@
  */
 - (void)checkApprovalForUser:(GSUser * __nonnull)user onCompletion:(void (^ __nonnull)(BOOL approved, BOOL isFirstTransactionOfUser, NSString * __nullable buttonText, NSError * __nullable error))completion;
 
-
-/**
- Authorizes and returns appropriate response for a transaction. 
- 
- On successful transaction jsonResponse in Completion block will contain transaction_token key which is to be sent to Merchant server with cart details within 1 Hr of doing the transaction.
-
- @param transaction A GSTransaction object encapsulating GSUser and transaction amount
- @param completion  Completion block for the response with following arguments  : NSDictionary jsonResponse , NSError error
- */
-- (void)authorizeTransaction:(GSTransaction * __nonnull)transaction onCompletion:(void (^ __nonnull)(NSDictionary * __nullable jsonResponse, NSError * __nullable error))completion;
-
-/**
- Authorizes and returns appropriate response for a transaction
- 
- On successful transaction jsonResponse in Completion block will contain transaction_token key which is to be sent to Merchant server with
- cart details within 1 Hr of doing the transaction.
-
- @param transaction A GSTransaction object encapsulating GSUser and transaction amount
- @param orderID     The order id of the transaction
- @param completion  Completion block for the response
- */
-- (void)authorizeTransaction:(GSTransaction * __nonnull)transaction withOrderId:(NSString * __nullable)orderID onCompletion:(void (^ __nonnull)(NSDictionary * __nullable jsonResponse, NSError * __nullable error))completion;
-
-
-/**
- Open the verification_url/redirection_url recieved when creating subscription token or checking the eligibility of token.
- 
- On successful response jsonResponse in Completion block will contain subscription_token/success message
- 
- @param urlString  The url to open
- @param completion Completion block for the response
- */
--(void)verifySubscription:(NSString * __nonnull)urlString onCompletion:(void (^ __nonnull)(NSDictionary * _Nullable jsonResponse, NSError * _Nullable error))completion ;
 
 
 @end

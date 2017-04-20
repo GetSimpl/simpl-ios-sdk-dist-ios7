@@ -9,5 +9,4 @@
 #import "GSManager.h"
 #import "GSUser.h"
 #import "GSTransaction.h"
-#import "GSCallBackHandler.h"
-
+#import "GSManager+Transaction.h"
