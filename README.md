@@ -22,31 +22,47 @@ $ pod install
 ````
 
 ## iOS Integration
+
 * Target -> Build Settings -> ENABLE_BITCODE -> Mark it as NO.
+
 * Add the following to your Info.plist file:
+
 ````
-    <key>CFBundleURLTypes</key>
+<key>CFBundleURLTypes</key>
+<array>
+  <dict>
+    <key>CFBundleURLSchemes</key>
     <array>
-     <dict>
-        <key>CFBundleURLSchemes</key>
-        <array>
-        // smp + YourMerchantID, like; smp55d72761ec60ytbnk97414182
-        <string>smpYourMerchantID</string>
-       </array>
-     </dict>
+      <string>smpYourMerchantID</string>
     </array>
+  </dict>
+</array>
 ````
+
+Note that you must add your merchantID in `smpYourMerchantID` such as `smp55d72761ec60ytbnk97414182`.
+
 * For iOS 9+ also add the following to your Info.plist file :
+
 ````
-    <key>NSAppTransportSecurity</key>
+<key>NSAppTransportSecurity</key>
+<dict>
+    <key>NSExceptionDomains</key>
     <dict>
-      <key>NSAllowsArbitraryLoads</key>
-      <true/>
-    </dict>
-    <key>LSApplicationQueriesSchemes</key>
-     <array>
-      <string>simplApp</string>
-     </array>
+      <key>getsimpl.com</key>
+      <dict>
+        <key>NSExceptionAllowsInsecureHTTPLoads</key>
+        <true/>
+        <key>NSIncludesSubdomains</key>
+        <true/>
+        <key>NSThirdPartyExceptionRequiresForwardSecrecy</key>
+        <false/>
+      </dict>
+    </dict>  
+</dict>
+<key>LSApplicationQueriesSchemes</key>
+<array>
+    <string>simplApp</string>
+</array>
 ````
 
 * In you AppDelegate add the following lines: 
