@@ -65,17 +65,6 @@ Note that you must add your merchantID in `smpYourMerchantID` such as `smp55d727
 </array>
 ````
 
-* In you AppDelegate add the following lines: 
-````
-- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication     annotation: (id)annotation
-    { if ([[GSCallBackHandler sharedInstance] canHandleURL:url]) {
-      return [[GSCallBackHandler sharedInstance] application:application openURL:url sourceApplication:sourceApplication      annotation:annotation] ;
-    }
-
-  return YES;
-   }
-````
-
 * Developers can toggle between sandbox or production environment like below :
 ````
 [GSManager enableSandBoxEnvironment:YES]
