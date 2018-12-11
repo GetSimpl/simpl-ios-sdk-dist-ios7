@@ -98,12 +98,11 @@ If the user is approved and merchant should show Simpl button and if the user is
 * On clicking Simpl button, call the following method to start the transaction. This will open an OTP view for the user to enter . In the completion block transaction_token will be returned.
 ````
    GSUser *user = [[GSUser alloc] initWithPhoneNumber:@"user mobile number" email:@"user email"];
-   GSTransaction *transaction = [[GSTransaction alloc] initWithUser:user amountInPaise:500];
-    or
-   GSTransaction *transaction = [[GSTransaction alloc] initWithUser:user withOrderId:"OrderId" amountInPaise:500];
-   
    // OrderId refers to the merchant generated order id of the transaction in progress
+   NSDictionary *additionalParams = @{@"order_id": @"merchant order id"};
+   [user setHeaderParams:additionalParams];
    
+   GSTransaction *transaction = [[GSTransaction alloc] initWithUser:user amountInPaise:500];   
 [ [GSManager sharedManager]  authorizeTransaction:transaction onCompletion:^(NSDictionary * jsonResponse, NSError *  error) {
   }];
 ````
