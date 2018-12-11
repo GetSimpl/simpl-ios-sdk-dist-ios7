@@ -103,7 +103,7 @@ If the user is approved and merchant should show Simpl button and if the user is
    [user setHeaderParams:additionalParams];
    
    GSTransaction *transaction = [[GSTransaction alloc] initWithUser:user amountInPaise:500];   
-[ [GSManager sharedManager]  authorizeTransaction:transaction onCompletion:^(NSDictionary * jsonResponse, NSError *  error) {
+  [[GSManager sharedManager]  authorizeTransaction:transaction onCompletion:^(NSDictionary * jsonResponse, NSError *  error) {
   }];
 ````
 Phone number of GSUser must be set before making authorizeTransaction call.
